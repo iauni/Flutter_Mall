@@ -18,7 +18,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
-  List<Widget> _list = List();
+  List<Widget> _list =new List<Widget>();
 
   @override
   void initState() {
@@ -26,6 +26,7 @@ class _HomePageState extends State<HomePage> {
     SharedPreferencesUtil.getInstance().setBool(AppStrings.IS_FIRST, false);
     tabSelectBus.on<TabSelectEvent>().listen((event) {
       setState(() {
+        print('event-----'+event.toString());
         TabSelectEvent tabSelectEvent = event;
         _selectedIndex = tabSelectEvent.selectIndex;
       });

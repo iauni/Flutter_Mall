@@ -16,6 +16,7 @@ void main() async {
   var _cartViewModel = CartViewModel();
   await _userViewModel.refreshData();
   SharedPreferencesUtil.getInstance().getString(AppStrings.TOKEN).then((value) {
+    print("value-----------------------------"+value);
     if (value != null) {
       _cartViewModel.queryCart();
     }
@@ -44,7 +45,7 @@ class MallApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      locale: DevicePreview.of(context).locale,
+      // locale: DevicePreview.of(context).locale,
       // <--- /!\ Add the locale
       builder: DevicePreview.appBuilder,
       // <--- /!\ Add the builder

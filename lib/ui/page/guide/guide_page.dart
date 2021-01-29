@@ -38,6 +38,7 @@ class _GuidePageState extends State<GuidePage> {
                     color: AppColors.COLOR_FF5722,
                     textColor: AppColors.COLOR_FFFFFF,
                     onPressed: () {
+                      print("context"+context.toString());
                       NavigatorUtil.goMallMainPage(context);
                     },
                     child: Text(AppStrings.OPEN_DOOR,
